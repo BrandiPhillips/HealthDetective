@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		956FB66B1E21A73800E9149E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FB66A1E21A73800E9149E /* AppDelegate.swift */; };
+		956FB66D1E21A73800E9149E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FB66C1E21A73800E9149E /* ViewController.swift */; };
+		956FB6701E21A73800E9149E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956FB66E1E21A73800E9149E /* Main.storyboard */; };
+		956FB6721E21A73800E9149E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956FB6711E21A73800E9149E /* Assets.xcassets */; };
+		956FB6751E21A73800E9149E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956FB6731E21A73800E9149E /* LaunchScreen.storyboard */; };
+		956FB6801E21A73900E9149E /* HealthDetectiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FB67F1E21A73900E9149E /* HealthDetectiveTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		956FB67C1E21A73900E9149E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 956FB65F1E21A73800E9149E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 956FB6661E21A73800E9149E;
+			remoteInfo = HealthDetective;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		956FB6671E21A73800E9149E /* HealthDetective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthDetective.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		956FB66A1E21A73800E9149E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		956FB66C1E21A73800E9149E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		956FB66F1E21A73800E9149E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		956FB6711E21A73800E9149E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		956FB6741E21A73800E9149E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		956FB6761E21A73800E9149E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		956FB67B1E21A73900E9149E /* HealthDetectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthDetectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		956FB67F1E21A73900E9149E /* HealthDetectiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDetectiveTests.swift; sourceTree = "<group>"; };
+		956FB6811E21A73900E9149E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		956FB6641E21A73800E9149E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		956FB6781E21A73900E9149E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		956FB65E1E21A73800E9149E = {
+			isa = PBXGroup;
+			children = (
+				956FB6691E21A73800E9149E /* HealthDetective */,
+				956FB67E1E21A73900E9149E /* HealthDetectiveTests */,
+				956FB6681E21A73800E9149E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		956FB6681E21A73800E9149E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				956FB6671E21A73800E9149E /* HealthDetective.app */,
+				956FB67B1E21A73900E9149E /* HealthDetectiveTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		956FB6691E21A73800E9149E /* HealthDetective */ = {
+			isa = PBXGroup;
+			children = (
+				956FB66A1E21A73800E9149E /* AppDelegate.swift */,
+				956FB66C1E21A73800E9149E /* ViewController.swift */,
+				956FB66E1E21A73800E9149E /* Main.storyboard */,
+				956FB6711E21A73800E9149E /* Assets.xcassets */,
+				956FB6731E21A73800E9149E /* LaunchScreen.storyboard */,
+				956FB6761E21A73800E9149E /* Info.plist */,
+			);
+			path = HealthDetective;
+			sourceTree = "<group>";
+		};
+		956FB67E1E21A73900E9149E /* HealthDetectiveTests */ = {
+			isa = PBXGroup;
+			children = (
+				956FB67F1E21A73900E9149E /* HealthDetectiveTests.swift */,
+				956FB6811E21A73900E9149E /* Info.plist */,
+			);
+			path = HealthDetectiveTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		956FB6661E21A73800E9149E /* HealthDetective */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 956FB6841E21A73900E9149E /* Build configuration list for PBXNativeTarget "HealthDetective" */;
+			buildPhases = (
+				956FB6631E21A73800E9149E /* Sources */,
+				956FB6641E21A73800E9149E /* Frameworks */,
+				956FB6651E21A73800E9149E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HealthDetective;
+			productName = HealthDetective;
+			productReference = 956FB6671E21A73800E9149E /* HealthDetective.app */;
+			productType = "com.apple.product-type.application";
+		};
+		956FB67A1E21A73900E9149E /* HealthDetectiveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 956FB6871E21A73900E9149E /* Build configuration list for PBXNativeTarget "HealthDetectiveTests" */;
+			buildPhases = (
+				956FB6771E21A73900E9149E /* Sources */,
+				956FB6781E21A73900E9149E /* Frameworks */,
+				956FB6791E21A73900E9149E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				956FB67D1E21A73900E9149E /* PBXTargetDependency */,
+			);
+			name = HealthDetectiveTests;
+			productName = HealthDetectiveTests;
+			productReference = 956FB67B1E21A73900E9149E /* HealthDetectiveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		956FB65F1E21A73800E9149E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Brandi Milligan";
+				TargetAttributes = {
+					956FB6661E21A73800E9149E = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 5254A2S873;
+						ProvisioningStyle = Automatic;
+					};
+					956FB67A1E21A73900E9149E = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 956FB6661E21A73800E9149E;
+					};
+				};
+			};
+			buildConfigurationList = 956FB6621E21A73800E9149E /* Build configuration list for PBXProject "HealthDetective" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 956FB65E1E21A73800E9149E;
+			productRefGroup = 956FB6681E21A73800E9149E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				956FB6661E21A73800E9149E /* HealthDetective */,
+				956FB67A1E21A73900E9149E /* HealthDetectiveTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		956FB6651E21A73800E9149E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				956FB6751E21A73800E9149E /* LaunchScreen.storyboard in Resources */,
+				956FB6721E21A73800E9149E /* Assets.xcassets in Resources */,
+				956FB6701E21A73800E9149E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		956FB6791E21A73900E9149E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		956FB6631E21A73800E9149E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				956FB66D1E21A73800E9149E /* ViewController.swift in Sources */,
+				956FB66B1E21A73800E9149E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		956FB6771E21A73900E9149E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				956FB6801E21A73900E9149E /* HealthDetectiveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		956FB67D1E21A73900E9149E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 956FB6661E21A73800E9149E /* HealthDetective */;
+			targetProxy = 956FB67C1E21A73900E9149E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		956FB66E1E21A73800E9149E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				956FB66F1E21A73800E9149E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		956FB6731E21A73800E9149E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				956FB6741E21A73800E9149E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		956FB6821E21A73900E9149E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		956FB6831E21A73900E9149E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		956FB6851E21A73900E9149E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5254A2S873;
+				INFOPLIST_FILE = HealthDetective/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AdaStudent.HealthDetective;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		956FB6861E21A73900E9149E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5254A2S873;
+				INFOPLIST_FILE = HealthDetective/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AdaStudent.HealthDetective;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		956FB6881E21A73900E9149E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HealthDetectiveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AdaStudent.HealthDetectiveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealthDetective.app/HealthDetective";
+			};
+			name = Debug;
+		};
+		956FB6891E21A73900E9149E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HealthDetectiveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AdaStudent.HealthDetectiveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealthDetective.app/HealthDetective";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		956FB6621E21A73800E9149E /* Build configuration list for PBXProject "HealthDetective" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				956FB6821E21A73900E9149E /* Debug */,
+				956FB6831E21A73900E9149E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		956FB6841E21A73900E9149E /* Build configuration list for PBXNativeTarget "HealthDetective" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				956FB6851E21A73900E9149E /* Debug */,
+				956FB6861E21A73900E9149E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		956FB6871E21A73900E9149E /* Build configuration list for PBXNativeTarget "HealthDetectiveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				956FB6881E21A73900E9149E /* Debug */,
+				956FB6891E21A73900E9149E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 956FB65F1E21A73800E9149E /* Project object */;
+}
