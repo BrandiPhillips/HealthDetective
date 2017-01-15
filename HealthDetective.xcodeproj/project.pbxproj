@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9547AA891E2AC9C70049DC43 /* MealEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9547AA881E2AC9C70049DC43 /* MealEntryViewController.swift */; };
+		954C0A9C1E2859D0006E5726 /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954C0A9B1E2859D0006E5726 /* DatePickerController.swift */; };
 		956FB66B1E21A73800E9149E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FB66A1E21A73800E9149E /* AppDelegate.swift */; };
-		956FB66D1E21A73800E9149E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FB66C1E21A73800E9149E /* ViewController.swift */; };
 		956FB6701E21A73800E9149E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956FB66E1E21A73800E9149E /* Main.storyboard */; };
 		956FB6721E21A73800E9149E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956FB6711E21A73800E9149E /* Assets.xcassets */; };
 		956FB6751E21A73800E9149E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956FB6731E21A73800E9149E /* LaunchScreen.storyboard */; };
 		956FB6801E21A73900E9149E /* HealthDetectiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FB67F1E21A73900E9149E /* HealthDetectiveTests.swift */; };
+		95F33C861E293E8000B8B162 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C851E293E8000B8B162 /* DashboardController.swift */; };
+		95F33C881E293ED200B8B162 /* EntryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C871E293ED200B8B162 /* EntryListController.swift */; };
+		95F33C8A1E293F6700B8B162 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C891E293F6700B8B162 /* LoginViewController.swift */; };
+		95F33C8C1E2940B900B8B162 /* MainNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C8B1E2940B900B8B162 /* MainNavController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9547AA881E2AC9C70049DC43 /* MealEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEntryViewController.swift; sourceTree = "<group>"; };
+		954C0A9B1E2859D0006E5726 /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		956FB6671E21A73800E9149E /* HealthDetective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthDetective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956FB66A1E21A73800E9149E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		956FB66C1E21A73800E9149E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		956FB66F1E21A73800E9149E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		956FB6711E21A73800E9149E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		956FB6741E21A73800E9149E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +42,10 @@
 		956FB67B1E21A73900E9149E /* HealthDetectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthDetectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		956FB67F1E21A73900E9149E /* HealthDetectiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDetectiveTests.swift; sourceTree = "<group>"; };
 		956FB6811E21A73900E9149E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95F33C851E293E8000B8B162 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		95F33C871E293ED200B8B162 /* EntryListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryListController.swift; sourceTree = "<group>"; };
+		95F33C891E293F6700B8B162 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		95F33C8B1E2940B900B8B162 /* MainNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +88,16 @@
 			isa = PBXGroup;
 			children = (
 				956FB66A1E21A73800E9149E /* AppDelegate.swift */,
-				956FB66C1E21A73800E9149E /* ViewController.swift */,
+				95F33C891E293F6700B8B162 /* LoginViewController.swift */,
+				95F33C8B1E2940B900B8B162 /* MainNavController.swift */,
+				95F33C851E293E8000B8B162 /* DashboardController.swift */,
+				954C0A9B1E2859D0006E5726 /* DatePickerController.swift */,
+				95F33C871E293ED200B8B162 /* EntryListController.swift */,
 				956FB66E1E21A73800E9149E /* Main.storyboard */,
 				956FB6711E21A73800E9149E /* Assets.xcassets */,
 				956FB6731E21A73800E9149E /* LaunchScreen.storyboard */,
 				956FB6761E21A73800E9149E /* Info.plist */,
+				9547AA881E2AC9C70049DC43 /* MealEntryViewController.swift */,
 			);
 			path = HealthDetective;
 			sourceTree = "<group>";
@@ -200,7 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956FB66D1E21A73800E9149E /* ViewController.swift in Sources */,
+				9547AA891E2AC9C70049DC43 /* MealEntryViewController.swift in Sources */,
+				95F33C8A1E293F6700B8B162 /* LoginViewController.swift in Sources */,
+				95F33C881E293ED200B8B162 /* EntryListController.swift in Sources */,
+				95F33C861E293E8000B8B162 /* DashboardController.swift in Sources */,
+				95F33C8C1E2940B900B8B162 /* MainNavController.swift in Sources */,
+				954C0A9C1E2859D0006E5726 /* DatePickerController.swift in Sources */,
 				956FB66B1E21A73800E9149E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.AdaStudent.HealthDetective;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -359,6 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.AdaStudent.HealthDetective;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -409,6 +431,7 @@
 				956FB6861E21A73900E9149E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		956FB6871E21A73900E9149E /* Build configuration list for PBXNativeTarget "HealthDetectiveTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +440,7 @@
 				956FB6891E21A73900E9149E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
