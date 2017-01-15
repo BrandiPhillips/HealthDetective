@@ -23,6 +23,9 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Meal Entry"
+        
+        
         mealNameField.delegate = self
         
         mealDateTimeField.delegate = self
