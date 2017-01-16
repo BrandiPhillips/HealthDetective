@@ -10,7 +10,7 @@
 		45421FFF6EDFE56219DAAC03 /* Pods_HealthDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D87F10D6EC495FD2489FE02 /* Pods_HealthDetective.framework */; };
 		9547AA891E2AC9C70049DC43 /* MealEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9547AA881E2AC9C70049DC43 /* MealEntryViewController.swift */; };
 		9547AA8B1E2C39990049DC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9547AA8A1E2C39990049DC43 /* Assets.xcassets */; };
-		9547AA8F1E2CAE010049DC43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9547AA8E1E2CAE010049DC43 /* GoogleService-Info.plist */; };
+		9547AA911E2D58250049DC43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9547AA901E2D58250049DC43 /* GoogleService-Info.plist */; };
 		956FB66B1E21A73800E9149E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FB66A1E21A73800E9149E /* AppDelegate.swift */; };
 		956FB6701E21A73800E9149E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956FB66E1E21A73800E9149E /* Main.storyboard */; };
 		956FB6751E21A73800E9149E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956FB6731E21A73800E9149E /* LaunchScreen.storyboard */; };
@@ -37,7 +37,7 @@
 		8D87F10D6EC495FD2489FE02 /* Pods_HealthDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9547AA881E2AC9C70049DC43 /* MealEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEntryViewController.swift; sourceTree = "<group>"; };
 		9547AA8A1E2C39990049DC43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
-		9547AA8E1E2CAE010049DC43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9547AA901E2D58250049DC43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		956FB6671E21A73800E9149E /* HealthDetective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthDetective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956FB66A1E21A73800E9149E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		956FB66F1E21A73800E9149E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		956FB65E1E21A73800E9149E = {
 			isa = PBXGroup;
 			children = (
-				9547AA8E1E2CAE010049DC43 /* GoogleService-Info.plist */,
+				9547AA901E2D58250049DC43 /* GoogleService-Info.plist */,
 				956FB6691E21A73800E9149E /* HealthDetective */,
 				956FB67E1E21A73900E9149E /* HealthDetectiveTests */,
 				956FB6681E21A73800E9149E /* Products */,
@@ -223,7 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				956FB6751E21A73800E9149E /* LaunchScreen.storyboard in Resources */,
-				9547AA8F1E2CAE010049DC43 /* GoogleService-Info.plist in Resources */,
+				9547AA911E2D58250049DC43 /* GoogleService-Info.plist in Resources */,
 				9547AA8B1E2C39990049DC43 /* Assets.xcassets in Resources */,
 				956FB6701E21A73800E9149E /* Main.storyboard in Resources */,
 			);
