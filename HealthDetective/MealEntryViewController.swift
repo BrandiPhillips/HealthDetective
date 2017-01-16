@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     // MARK: Properties:
     
@@ -19,23 +19,28 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var mealNameField: UITextField!
     @IBOutlet weak var mealDateTimeField: UITextField!
-    
+    @IBOutlet weak var mealDetails: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Meal Entry"
-        
-        
-        mealNameField.delegate = self
-        
-        mealDateTimeField.delegate = self
-        
+        mealDetails.layer.cornerRadius = 5
+
         let toolBar = UIToolbar().ToolbarPicker(mySelect: #selector(MealEntryViewController.dismissPicker))
         
         mealDateTimeField.inputAccessoryView = toolBar
     }
     
-    // MARK: UITextFieldDelegate methods
+    // MARK:  UITextViewDelegate methods:
+    
+    // hide keyboard when return key tapped in textView
+    func textViewShouldReturn(_ textView: UITextView) -> Bool {
+        self.mealDetails.resignFirstResponder()
+        return true
+    }
+    
+    // MARK: UITextFieldDelegate methods:
     
     // hide keyboard when return key tapped:
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -50,7 +55,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         dateFormatter.timeStyle = .short
         mealDateTimeField.text = dateFormatter.string(from: sender.date)
         
-        print("new date?")
+        print("new date?") // this isn't working... 
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -101,6 +106,8 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }
+    
+ 
 
     @IBAction func mealDateTimeEditing(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
@@ -109,6 +116,8 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         datePickerView.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
     }
 
+    @IBAction func recordEntry(_ sender: UIButton) {
+    }
 
 }
 
