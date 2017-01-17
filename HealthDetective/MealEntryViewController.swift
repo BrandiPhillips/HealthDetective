@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     // MARK: Properties:
+    
+    let rootRef = FIRDatabase.database().reference()
     
     var datePicker : UIDatePicker!
     
@@ -20,7 +23,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var mealNameField: UITextField!
     @IBOutlet weak var mealDateTimeField: UITextField!
     @IBOutlet weak var mealDetails: UITextView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,11 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         let toolBar = UIToolbar().ToolbarPicker(mySelect: #selector(MealEntryViewController.dismissPicker))
         
         mealDateTimeField.inputAccessoryView = toolBar
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
     
     // MARK:  UITextViewDelegate methods:
@@ -42,7 +50,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     
     // MARK: UITextFieldDelegate methods:
     
-    // hide keyboard when return key tapped:
+    // hide keyboard when return key tapped in textField:
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.mealNameField.resignFirstResponder()
         return true
@@ -58,6 +66,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         print("new date?") // this isn't working... 
     }
     
+    // is this over ridding the keyboard for the mealName Field??  At one time it was getting a keyboard and the date field a date picker but for some reason that is not happening any longer...
     func textFieldDidBeginEditing(_ textField: UITextField) {
         let datePicker = UIDatePicker()
         textField.inputView = datePicker
@@ -117,6 +126,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     }
 
     @IBAction func recordEntry(_ sender: UIButton) {
+        // need to tell Firebase to update data base with contents of fields and direct to the list view
     }
 
 }

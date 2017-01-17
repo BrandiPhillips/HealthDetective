@@ -40,7 +40,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
   // MARK: Actions:
-    // send user information to Firebase for authentication:
+    
+    // send user information to Firebase for authentication when login selected:
     
     @IBAction func loginTapped(_ sender: UIButton) {
         let email = emailField.text
@@ -68,17 +69,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         })
         
     }
-        
+    
+    // send request to create new account to Firebase when sign up selected:
     
     @IBAction func signUpTapped(_ sender: Any) {
-//        guard let email = emailField.text, let password = passwordField.text else { return}
-//        FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
-//            if let error = error {
-//                print(error.localizedDescription)
-//                return
-//            }
-//            
-//        }
+        let email = emailField.text
+        let password = passwordField.text
+        FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: { (user, error) in
+            if let error = error {
+                if let errCode = FIRAuthErrorCode(rawValue: error._code) {
+                    switch errCode {
+                    case .errorCodeInvalidEmail:
+                        self.showAlert("Enter a valid email.")
+                    case .errorCodeEmailAlreadyInUse:
+                        self.showAlert("Email already in use.")
+                    default:
+                        self.showAlert("Error: \(error.localizedDescription)")
+                    }
+                }
+                return
+            }
+            self.signIn()
+        })
     }
     
     // send a request to Firebase for password reset, an alert box will pop up for user to indicate what email address to send request to:
@@ -100,6 +112,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             }
                         default:
                             DispatchQueue.main.async {
+                                
+                                // for development purposes: 
                                 self.showAlert("Error: \(error.localizedDescription)")
                             }
                         }

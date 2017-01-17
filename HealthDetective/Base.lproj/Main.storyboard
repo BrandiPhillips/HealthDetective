@@ -151,113 +151,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="665"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUR-NV-Zxf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xxX-Wy-a07" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Meal Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5p-eg-Sgm">
-                                                <rect key="frame" x="30" y="257" width="315" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80Z-gM-CIP">
-                                                <rect key="frame" x="30" y="297" width="315" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="mealDateTimeEditing:" destination="g2n-AA-apr" eventType="editingDidBegin" id="GUu-LT-Rnd"/>
-                                                </connections>
-                                            </textField>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="XNv-kb-IMU" customClass="mealImage">
-                                                <rect key="frame" x="8" y="67" width="359" height="180"/>
-                                                <gestureRecognizers/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="180" id="Xgi-TB-fGn"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="o3s-Lq-pbW" appends="YES" id="xvc-Fy-o1G"/>
-                                                </connections>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dx-w5-21N">
-                                                <rect key="frame" x="30" y="424" width="315" height="35"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
-                                                <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cj-Pd-Fl3">
-                                                <rect key="frame" x="30" y="337" width="315" height="57"/>
-                                                <state key="normal" image="ingredients-1"/>
-                                            </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7xn-A9-RKF">
-                                                <rect key="frame" x="30" y="467" width="317" height="128"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="g2n-AA-apr" id="fgd-Db-htQ"/>
-                                                </connections>
-                                            </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F01-1j-L86">
-                                                <rect key="frame" x="25" y="600" width="326" height="57"/>
-                                                <state key="normal" image="recordEntry"/>
-                                                <connections>
-                                                    <action selector="recordEntry:" destination="g2n-AA-apr" eventType="touchUpInside" id="rvN-FM-tYg"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="J5p-eg-Sgm" firstAttribute="top" secondItem="XNv-kb-IMU" secondAttribute="bottom" constant="10" id="7bX-xs-eSn"/>
-                                            <constraint firstItem="80Z-gM-CIP" firstAttribute="leading" secondItem="xxX-Wy-a07" secondAttribute="leading" constant="30" id="80Q-Gi-CAH"/>
-                                            <constraint firstAttribute="trailing" secondItem="80Z-gM-CIP" secondAttribute="trailing" constant="30" id="Dau-lx-EwL"/>
-                                            <constraint firstAttribute="trailing" secondItem="2dx-w5-21N" secondAttribute="trailing" constant="30" id="Ec5-Dm-WmD"/>
-                                            <constraint firstItem="2dx-w5-21N" firstAttribute="top" secondItem="7Cj-Pd-Fl3" secondAttribute="bottom" constant="30" id="FWN-eH-8Ox"/>
-                                            <constraint firstItem="J5p-eg-Sgm" firstAttribute="trailing" secondItem="80Z-gM-CIP" secondAttribute="trailing" id="JiS-AF-B0B"/>
-                                            <constraint firstItem="7xn-A9-RKF" firstAttribute="leading" secondItem="xxX-Wy-a07" secondAttribute="leading" constant="30" id="KXc-cx-pWa"/>
-                                            <constraint firstAttribute="trailing" secondItem="7Cj-Pd-Fl3" secondAttribute="trailing" constant="30" id="LZo-Nq-5Tv"/>
-                                            <constraint firstItem="7Cj-Pd-Fl3" firstAttribute="top" secondItem="80Z-gM-CIP" secondAttribute="bottom" constant="10" id="PIp-NN-5hW"/>
-                                            <constraint firstItem="F01-1j-L86" firstAttribute="leading" secondItem="xxX-Wy-a07" secondAttribute="leading" constant="25" id="SUV-Be-32f"/>
-                                            <constraint firstItem="XNv-kb-IMU" firstAttribute="centerX" secondItem="J5p-eg-Sgm" secondAttribute="centerX" id="TWl-Ov-rfU"/>
-                                            <constraint firstItem="XNv-kb-IMU" firstAttribute="leading" secondItem="xxX-Wy-a07" secondAttribute="leadingMargin" id="VlC-Uz-Q50"/>
-                                            <constraint firstItem="J5p-eg-Sgm" firstAttribute="trailing" secondItem="2dx-w5-21N" secondAttribute="trailing" id="bvb-8p-Pqf"/>
-                                            <constraint firstItem="J5p-eg-Sgm" firstAttribute="trailing" secondItem="7Cj-Pd-Fl3" secondAttribute="trailing" id="dmm-tu-0P2"/>
-                                            <constraint firstAttribute="bottom" secondItem="F01-1j-L86" secondAttribute="bottom" constant="10" id="fYs-Jk-d3I"/>
-                                            <constraint firstItem="2dx-w5-21N" firstAttribute="leading" secondItem="xxX-Wy-a07" secondAttribute="leading" constant="30" id="k8B-yD-PWu"/>
-                                            <constraint firstItem="J5p-eg-Sgm" firstAttribute="leading" secondItem="80Z-gM-CIP" secondAttribute="leading" id="lP4-oC-oov"/>
-                                            <constraint firstItem="XNv-kb-IMU" firstAttribute="top" secondItem="xxX-Wy-a07" secondAttribute="top" constant="67" id="ovb-mz-lV0"/>
-                                            <constraint firstItem="J5p-eg-Sgm" firstAttribute="centerX" secondItem="xxX-Wy-a07" secondAttribute="centerX" id="pgR-63-QDF"/>
-                                            <constraint firstItem="80Z-gM-CIP" firstAttribute="top" secondItem="J5p-eg-Sgm" secondAttribute="bottom" constant="10" id="tJi-1e-aPZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="7xn-A9-RKF" secondAttribute="trailing" constant="30" id="uHh-ru-Wgj"/>
-                                            <constraint firstItem="7xn-A9-RKF" firstAttribute="top" secondItem="2dx-w5-21N" secondAttribute="bottom" constant="30" id="uai-8a-fEz"/>
-                                            <constraint firstItem="7Cj-Pd-Fl3" firstAttribute="leading" secondItem="xxX-Wy-a07" secondAttribute="leading" constant="30" id="wq4-Cb-iSS"/>
-                                            <constraint firstAttribute="trailing" secondItem="F01-1j-L86" secondAttribute="trailing" constant="25" id="xUt-D6-T8Y"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="xxX-Wy-a07" firstAttribute="top" secondItem="BUR-NV-Zxf" secondAttribute="top" id="31w-kl-1bT"/>
-                                    <constraint firstAttribute="bottom" secondItem="xxX-Wy-a07" secondAttribute="bottom" id="dse-g5-H5a"/>
-                                    <constraint firstItem="xxX-Wy-a07" firstAttribute="leading" secondItem="BUR-NV-Zxf" secondAttribute="leading" id="uwF-kr-OaL"/>
-                                    <constraint firstAttribute="trailing" secondItem="xxX-Wy-a07" secondAttribute="trailing" id="yOS-CE-djH"/>
-                                </constraints>
-                            </scrollView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Meal Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5p-eg-Sgm">
+                                <rect key="frame" x="30" y="232" width="315" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80Z-gM-CIP">
+                                <rect key="frame" x="30" y="270" width="315" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="mealDateTimeEditing:" destination="g2n-AA-apr" eventType="editingDidBegin" id="GUu-LT-Rnd"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meal Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dx-w5-21N">
+                                <rect key="frame" x="30" y="385" width="315" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cj-Pd-Fl3">
+                                <rect key="frame" x="34" y="320" width="307" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ingredients-1"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7xn-A9-RKF">
+                                <rect key="frame" x="30" y="421" width="314" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90702715970000003" green="0.90702715970000003" blue="0.90702715970000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="g2n-AA-apr" id="fgd-Db-htQ"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F01-1j-L86">
+                                <rect key="frame" x="27" y="589" width="321" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="recordEntry"/>
+                                <connections>
+                                    <action selector="recordEntry:" destination="g2n-AA-apr" eventType="touchUpInside" id="rvN-FM-tYg"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="uploadPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="XNv-kb-IMU" customClass="mealImage">
+                                <rect key="frame" x="19" y="82" width="337" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="o3s-Lq-pbW" appends="YES" id="xvc-Fy-o1G"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="jUb-Gi-LTQ" firstAttribute="top" secondItem="BUR-NV-Zxf" secondAttribute="bottom" id="72f-zc-slz"/>
-                            <constraint firstItem="xxX-Wy-a07" firstAttribute="width" secondItem="Qie-go-ZhU" secondAttribute="width" id="9HM-cT-ONH"/>
-                            <constraint firstItem="BUR-NV-Zxf" firstAttribute="top" secondItem="Qie-go-ZhU" secondAttribute="top" id="CwU-Om-AFU"/>
-                            <constraint firstAttribute="trailing" secondItem="BUR-NV-Zxf" secondAttribute="trailing" id="FTe-hN-EoY"/>
-                            <constraint firstItem="BUR-NV-Zxf" firstAttribute="leading" secondItem="Qie-go-ZhU" secondAttribute="leading" id="QkU-Ni-i0Z"/>
-                            <constraint firstAttribute="trailing" secondItem="BUR-NV-Zxf" secondAttribute="trailing" id="WaF-qa-53r"/>
-                            <constraint firstItem="BUR-NV-Zxf" firstAttribute="leading" secondItem="Qie-go-ZhU" secondAttribute="leading" id="Ze0-gy-VCe"/>
-                            <constraint firstItem="BUR-NV-Zxf" firstAttribute="bottom" secondItem="jUb-Gi-LTQ" secondAttribute="top" id="alt-Dw-dHi"/>
-                            <constraint firstItem="BUR-NV-Zxf" firstAttribute="top" secondItem="Qie-go-ZhU" secondAttribute="top" id="gbG-mj-9Qc"/>
-                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="665"/>
@@ -266,7 +216,6 @@
                         <outlet property="mealDetails" destination="7xn-A9-RKF" id="jYx-D3-FsI"/>
                         <outlet property="mealImage" destination="XNv-kb-IMU" id="6LI-s3-ErZ"/>
                         <outlet property="mealNameField" destination="J5p-eg-Sgm" id="iQ6-3A-fS6"/>
-                        <outlet property="scrollView" destination="BUR-NV-Zxf" id="0Jj-uH-wRp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZSF-aS-Mfv" userLabel="First Responder" sceneMemberID="firstResponder"/>

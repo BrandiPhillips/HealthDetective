@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class DashboardController: UIViewController {
 
@@ -16,8 +17,18 @@ class DashboardController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    // send logout notification to Firebase and return the user to the login screen:
+    
     @IBAction func logoutHandler(_ sender: UIBarButtonItem) {
-        presentingViewController?.dismiss(animated: true, completion: nil)
+        if FIRAuth.auth()?.currentUser != nil {
+            do {
+                try FIRAuth.auth()?.signOut()
+                presentingViewController?.dismiss(animated: true, completion: nil)
+            } catch let error {
+                assertionFailure("Error signing out: \(error)")
+            }
+        }
+        
     }
  
 }
