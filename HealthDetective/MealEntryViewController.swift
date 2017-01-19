@@ -129,12 +129,29 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     @IBAction func recordEntry(_ sender: Any) {
         let name = mealNameField.text!
         let details = mealDetails.text!
-        
-        ref = FIRDatabase.database().reference()
+        let imageName = NSUUID().uuidString
+        let storageRef = FIRStorage.storage().reference().child("\(imageName).png")
+        if let uploadImage = UIImagePNGRepresentation(mealImage.image!) {
+            storageRef.put(uploadImage, metadata: nil, completion: {(metadata, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                if let imageUrl = metadata?.downloadURL()?.absoluteString {
+                    let meal = ["mealName": name, "mealDetails": details, "mealImage": imageUrl]
+                    
+                    self.submitMealToDatabase(meal: meal)
+                }
+            })
+        }
+    }
+    
+    
+    private func submitMealToDatabase(meal: [String: Any]){
+        let ref = FIRDatabase.database().reference()
         let newMealRef = ref.child("users/\(self.user.uid)/meals").childByAutoId()
-        let meal = ["mealName": name, "mealDetails": details]
-        newMealRef.setValue(meal)
         
+        newMealRef.setValue(meal)
     }
 
 }
