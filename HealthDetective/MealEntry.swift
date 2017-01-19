@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class MealEntry {
+class Meal {
     
     //MARK: Properties
     

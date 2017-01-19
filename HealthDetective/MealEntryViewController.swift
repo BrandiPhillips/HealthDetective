@@ -14,6 +14,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     // MARK: Properties:
     
     var ref: FIRDatabaseReference!
+    
     var user: FIRUser!
     
     
@@ -125,13 +126,14 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     
  
 
-    @IBAction func recordEntry(_ sender: UIButton) {
+    @IBAction func recordEntry(_ sender: Any) {
         let name = mealNameField.text!
-        let details = mealDetails.text! 
+        let details = mealDetails.text!
         
         ref = FIRDatabase.database().reference()
-        
-        ref.child("users").child("\(self.user.uid)").child("meals").setValue(["mealName": name])
+        let newMealRef = ref.child("users/\(self.user.uid)/meals").childByAutoId()
+        let meal = ["mealName": name, "mealDetails": details]
+        newMealRef.setValue(meal)
         
     }
 

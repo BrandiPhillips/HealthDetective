@@ -186,6 +186,7 @@
                                 <state key="normal" image="recordEntry"/>
                                 <connections>
                                     <action selector="recordEntry:" destination="g2n-AA-apr" eventType="touchUpInside" id="rvN-FM-tYg"/>
+                                    <segue destination="euK-su-C2i" kind="show" id="mVI-jS-FRd"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="uploadPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="XNv-kb-IMU" customClass="mealImage">
@@ -226,16 +227,25 @@
             <objects>
                 <tableViewController id="euK-su-C2i" customClass="EntryListController" customModule="HealthDetective" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DL0-bC-VyH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="665"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KcM-j3-3aY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="JvY-7i-Ghe" style="IBUITableViewCellStyleDefault" id="KcM-j3-3aY">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KcM-j3-3aY" id="3Nk-cV-kYS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JvY-7i-Ghe">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -277,4 +287,7 @@
         <image name="symptomEntryButton" width="326" height="57"/>
         <image name="uploadPhoto" width="185" height="90"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="mVI-jS-FRd"/>
+    </inferredMetricsTieBreakers>
 </document>
