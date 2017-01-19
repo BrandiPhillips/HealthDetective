@@ -13,7 +13,10 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     
     // MARK: Properties:
     
-    let rootRef = FIRDatabase.database().reference()
+    var ref: FIRDatabaseReference!
+    var user: FIRUser!
+    
+    
     
     var datePicker : UIDatePicker!
     
@@ -21,7 +24,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var mealNameField: UITextField!
-    @IBOutlet weak var mealDateTimeField: UITextField!
+    
     @IBOutlet weak var mealDetails: UITextView!
     
     
@@ -29,10 +32,15 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
         self.title = "Meal Entry"
         mealDetails.layer.cornerRadius = 5
-
-        let toolBar = UIToolbar().ToolbarPicker(mySelect: #selector(MealEntryViewController.dismissPicker))
         
-        mealDateTimeField.inputAccessoryView = toolBar
+        mealNameField.delegate = self
+        
+        user = FIRAuth.auth()?.currentUser
+    
+
+//        let toolBar = UIToolbar().ToolbarPicker(mySelect: #selector(MealEntryViewController.dismissPicker))
+        
+//        mealDateTimeField.inputAccessoryView = toolBar
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,20 +66,19 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     
     // update date time field using date picker:
     func datePickerChanged(sender: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .short
-        mealDateTimeField.text = dateFormatter.string(from: sender.date)
-        
-        print("new date?") // this isn't working... 
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateStyle = .medium
+//        dateFormatter.timeStyle = .short
+//        mealDateTimeField.text = dateFormatter.string(from: sender.date)
+//        
+//        print("new date?") // this isn't working... 
     }
     
     // is this over ridding the keyboard for the mealName Field??  At one time it was getting a keyboard and the date field a date picker but for some reason that is not happening any longer...
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        let datePicker = UIDatePicker()
-        textField.inputView = datePicker
-        datePicker.addTarget(self, action: (Selector(("datePickerChanged:"))), for: .valueChanged)
-        
+//        let datePicker = UIDatePicker()
+//        textField.inputView = datePicker
+//        datePicker.addTarget(self, action: (Selector(("datePickerChanged:"))), for: .valueChanged)
 //        print("did it work")
     }
     
@@ -118,15 +125,14 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     
  
 
-    @IBAction func mealDateTimeEditing(_ sender: UITextField) {
-        let datePickerView:UIDatePicker = UIDatePicker()
-        datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
-        sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
-    }
-
     @IBAction func recordEntry(_ sender: UIButton) {
-        // need to tell Firebase to update data base with contents of fields and direct to the list view
+        let name = mealNameField.text!
+        let details = mealDetails.text! 
+        
+        ref = FIRDatabase.database().reference()
+        
+        ref.child("users").child("\(self.user.uid)").child("meals").setValue(["mealName": name])
+        
     }
 
 }

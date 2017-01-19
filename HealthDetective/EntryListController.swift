@@ -10,11 +10,12 @@
 //import Firebase
 //
 //class EntryListController: UITableViewController {
+
 //    
 //    // MARK: Properties:
 //    
 //    var user: FIRUser!
-//    var mealEntries = [mealEntry]()
+//    var meals = [meal]()
 //    var ref: FIRDatabaseReference!
 //    private var databaseHandle: FIRDatabaseHandle!
 //    
@@ -56,7 +57,7 @@
 //    
 //    // Listener Method:
 //    func startObservingDatabase () {
-//        databaseHandle = ref.child("users/\(self.user.uid)/items").observe(.value, with: { (snapshot) in
+//        databaseHandle = ref.child("users/\(self.user.uid)/meals").observe(.value, with: { (snapshot) in
 //            var newEntries = [mealEntry]()
 //            for mealEntrySnapShot in snapshot.children {
 //                let mealEntry = MealEntry(snapshot: mealEntrySnapShot as! FIRDataSnapshot)
