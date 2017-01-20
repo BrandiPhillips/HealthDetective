@@ -13,6 +13,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     
     // MARK: Properties:
     
+    var stringPassed = ""
     var ref: FIRDatabaseReference!
     
     var user: FIRUser!
@@ -23,7 +24,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var mealNameField: UITextField!
     @IBOutlet weak var mealDetails: UITextView!
-    
+    @IBOutlet weak var mealDate: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         mealDetails.layer.cornerRadius = 10
         mealImage.layer.cornerRadius = 10 
         mealNameField.delegate = self
-        
+        mealDate.setTitle(stringPassed, for: .normal)
         user = FIRAuth.auth()?.currentUser
     
     }
@@ -97,6 +98,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         let name = mealNameField.text!
         let details = mealDetails.text!
         let imageName = NSUUID().uuidString
+        let date = stringPassed
         let storageRef = FIRStorage.storage().reference().child("\(imageName).png")
         if let uploadImage = UIImagePNGRepresentation(mealImage.image!) {
             storageRef.put(uploadImage, metadata: nil, completion: {(metadata, error) in
@@ -105,7 +107,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
                     return
                 }
                 if let imageUrl = metadata?.downloadURL()?.absoluteString {
-                    let meal = ["mealName": name, "mealDetails": details, "mealImage": imageUrl]
+                    let meal = ["mealName": name, "mealDetails": details, "mealImage": imageUrl, "mealDate": date] 
                     
                     self.submitMealToDatabase(meal: meal)
                 }

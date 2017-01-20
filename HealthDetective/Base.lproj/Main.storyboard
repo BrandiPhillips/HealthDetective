@@ -178,7 +178,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08b-Pt-Ns6">
                                 <rect key="frame" x="35" y="199" width="304" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="dateButton"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                <state key="normal" title="Select Date" backgroundImage="blankLavendarButton"/>
                                 <connections>
                                     <segue destination="dbJ-iq-2xu" kind="presentation" id="XHj-TR-Tmu"/>
                                 </connections>
@@ -202,7 +203,7 @@
         <!--Meal Entry View Controller-->
         <scene sceneID="XCr-Iu-gJD">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="g2n-AA-apr" customClass="MealEntryViewController" customModule="HealthDetective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MealEntryViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g2n-AA-apr" customClass="MealEntryViewController" customModule="HealthDetective" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xj3-xx-IiC"/>
                         <viewControllerLayoutGuide type="bottom" id="jUb-Gi-LTQ"/>
@@ -263,7 +264,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fly-cQ-muy">
                                 <rect key="frame" x="34" y="272" width="307" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="dateButton"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                <state key="normal" title="Select Date" backgroundImage="blankLavendarButton"/>
                                 <connections>
                                     <segue destination="dbJ-iq-2xu" kind="presentation" id="zOs-bE-fAz"/>
                                 </connections>
@@ -274,6 +276,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="665"/>
                     <connections>
+                        <outlet property="mealDate" destination="Fly-cQ-muy" id="hjr-zv-KCh"/>
                         <outlet property="mealDetails" destination="7xn-A9-RKF" id="jYx-D3-FsI"/>
                         <outlet property="mealImage" destination="XNv-kb-IMU" id="6LI-s3-ErZ"/>
                         <outlet property="mealNameField" destination="J5p-eg-Sgm" id="iQ6-3A-fS6"/>
@@ -291,7 +294,7 @@
         <!--Date Picker View Controller-->
         <scene sceneID="DmQ-j4-YJY">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="dbJ-iq-2xu" customClass="DatePickerViewController" customModule="HealthDetective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DatePickerViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dbJ-iq-2xu" customClass="DatePickerViewController" customModule="HealthDetective" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dcd-Ct-4T1"/>
                         <viewControllerLayoutGuide type="bottom" id="ZuL-Ul-xni"/>
@@ -307,10 +310,10 @@
                                         <rect key="frame" x="31" y="225" width="281" height="57"/>
                                         <state key="normal" image="selectButton"/>
                                         <connections>
-                                            <action selector="closePopup:" destination="dbJ-iq-2xu" eventType="touchUpInside" id="f72-O6-vgz"/>
+                                            <action selector="selectDateTapped:" destination="dbJ-iq-2xu" eventType="touchUpInside" id="8sO-9c-e71"/>
                                         </connections>
                                     </button>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="5yd-5Z-nxs">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="5yd-5Z-nxs">
                                         <rect key="frame" x="4" y="6" width="335" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="506572819.34406">
                                             <!--2017-01-20 02:40:19 +0000-->
@@ -340,7 +343,9 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="datePicker" destination="5yd-5Z-nxs" id="g0F-b7-eTA"/>
                         <outlet property="popupView" destination="0LJ-iY-WK2" id="7Kq-Rg-AJ7"/>
+                        <segue destination="g2n-AA-apr" kind="show" identifier="dateSelect" id="6Me-jJ-BnL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSA-kJ-9L3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -350,7 +355,7 @@
         <!--Ingredients View Controller-->
         <scene sceneID="iQw-AL-bhu">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="MxN-Jn-Ff7" customClass="IngredientsViewController" customModule="HealthDetective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IngredientsViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MxN-Jn-Ff7" customClass="IngredientsViewController" customModule="HealthDetective" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ehG-54-mGF"/>
                         <viewControllerLayoutGuide type="bottom" id="Kd5-wy-nlp"/>
@@ -399,7 +404,7 @@
             <objects>
                 <tableViewController id="euK-su-C2i" customClass="EntryListController" customModule="HealthDetective" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DL0-bC-VyH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="665"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -469,7 +474,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dateButton" width="326" height="57"/>
+        <image name="blankLavendarButton" width="314" height="57"/>
         <image name="entryListButton" width="326" height="57"/>
         <image name="ingredients-1" width="326" height="57"/>
         <image name="mealEntryButton" width="326" height="57"/>
@@ -479,7 +484,8 @@
         <image name="uploadPhoto" width="185" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XHj-TR-Tmu"/>
-        <segue reference="Z18-Hk-ovy"/>
+        <segue reference="ozh-iP-Ayc"/>
+        <segue reference="mVI-jS-FRd"/>
+        <segue reference="zOs-bE-fAz"/>
     </inferredMetricsTieBreakers>
 </document>

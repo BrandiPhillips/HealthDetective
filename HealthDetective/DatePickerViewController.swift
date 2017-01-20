@@ -11,6 +11,7 @@ import UIKit
 class DatePickerViewController: UIViewController {
     
     @IBOutlet weak var popupView: UIView!
+    @IBOutlet weak var datePicker: UIDatePicker!
    
 
     override func viewDidLoad() {
@@ -19,8 +20,24 @@ class DatePickerViewController: UIViewController {
         popupView.layer.cornerRadius = 10
     }
 
-    @IBAction func closePopup(_ sender: Any) {
-        dismiss(animated: true, completion: nil) 
+
+    @IBAction func selectDateTapped(_ sender: Any) {
+      
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        let userInput = dateFormatter.string(from: datePicker.date)
+        performSegue(withIdentifier: "dateSelect", sender: userInput)
+            
+//        dismiss(animated: true, completion: nil)
+        
+    }
+    
+//    //MARK: Format Date and time
+    override func prepare(for Segue: UIStoryboardSegue, sender: Any?) {
+        if Segue.identifier == "dateSelect" {
+            let destination = Segue.destination as! MealEntryViewController
+                destination.stringPassed = (sender as? String)!
+        }
     }
     
 

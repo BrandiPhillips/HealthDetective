@@ -15,10 +15,18 @@ class Meal {
     
     var ref: FIRDatabaseReference?
     var mealName: String
-//    var mealDateTime: Date
-//    var mealPhoto: UIImage?
+    var mealDate: String
+    var mealDetails: String?
+    var mealImage: String?
     
     //MARK: Initialization
+    
+//    init?(name: String, photo: UIImage?, rating: Int) {
+//        self.mealName = name
+//        self.mealImage = photo?
+//        self.mealDetails = details?
+//        self.mealDate = date
+//    }
     
     init(snapshot: FIRDataSnapshot) {
         ref = snapshot.ref
@@ -27,8 +35,9 @@ class Meal {
         
         let data = snapshot.value as! Dictionary<String, String>
         mealName = data["mealName"]! as String
-//        mealDateTime = data["mealDateTime"]! as Date
-//        mealPhoto = data["mealImage"] as photo
+        mealDate = data["mealDate"]! as String
+        mealDetails = data["mealDetails"]! as String
+        mealImage = data["mealImage"]! as String
     }
     
 }
