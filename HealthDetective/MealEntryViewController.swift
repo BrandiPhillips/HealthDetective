@@ -18,30 +18,22 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     var user: FIRUser!
     
     
-    
-    var datePicker : UIDatePicker!
-    
     //MARK: Outlets
     
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var mealNameField: UITextField!
-    
     @IBOutlet weak var mealDetails: UITextView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Meal Entry"
-        mealDetails.layer.cornerRadius = 5
-        
+        mealDetails.layer.cornerRadius = 10
+        mealImage.layer.cornerRadius = 10 
         mealNameField.delegate = self
         
         user = FIRAuth.auth()?.currentUser
     
-
-//        let toolBar = UIToolbar().ToolbarPicker(mySelect: #selector(MealEntryViewController.dismissPicker))
-        
-//        mealDateTimeField.inputAccessoryView = toolBar
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,31 +56,6 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         self.mealNameField.resignFirstResponder()
         return true
     }
-    
-    // update date time field using date picker:
-    func datePickerChanged(sender: UIDatePicker) {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .medium
-//        dateFormatter.timeStyle = .short
-//        mealDateTimeField.text = dateFormatter.string(from: sender.date)
-//        
-//        print("new date?") // this isn't working... 
-    }
-    
-    // is this over ridding the keyboard for the mealName Field??  At one time it was getting a keyboard and the date field a date picker but for some reason that is not happening any longer...
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        let datePicker = UIDatePicker()
-//        textField.inputView = datePicker
-//        datePicker.addTarget(self, action: (Selector(("datePickerChanged:"))), for: .valueChanged)
-//        print("did it work")
-    }
-    
-    func dismissPicker() {
-        
-        view.endEditing(true)
-        
-    }
-    
     
     // MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -156,25 +123,4 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
 
 }
 
-// Make a done button for date picker
-extension UIToolbar {
-    
-    func ToolbarPicker(mySelect : Selector) -> UIToolbar {
-        
-        let toolBar = UIToolbar()
-        
-        toolBar.barStyle = UIBarStyle.default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor.black
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: mySelect)
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        
-        toolBar.setItems([ spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
-        return toolBar
-    }
-    
-}
+
