@@ -189,12 +189,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="recordEntry"/>
                                 <connections>
+                                    <action selector="recordEntry:" destination="VfP-GN-3yn" eventType="touchUpInside" id="i44-4e-bcL"/>
                                     <segue destination="euK-su-C2i" kind="show" id="Z18-Hk-ovy"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="symptomDate" destination="08b-Pt-Ns6" id="TfN-y7-GNF"/>
+                        <outlet property="symptomDetails" destination="sJn-cc-VDR" id="onL-Bu-h8s"/>
+                        <outlet property="symptomName" destination="ICR-1X-a1a" id="7lt-FJ-G7F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a87-P2-YF6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -404,7 +410,7 @@
             <objects>
                 <tableViewController id="euK-su-C2i" customClass="EntryListController" customModule="HealthDetective" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DL0-bC-VyH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="665"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -484,8 +490,8 @@
         <image name="uploadPhoto" width="185" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Z18-Hk-ovy"/>
         <segue reference="XHj-TR-Tmu"/>
         <segue reference="6Me-jJ-BnL"/>
-        <segue reference="mVI-jS-FRd"/>
     </inferredMetricsTieBreakers>
 </document>

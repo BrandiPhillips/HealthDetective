@@ -7,29 +7,58 @@
 //
 
 import UIKit
+import Firebase
 
-class SymptomEntryViewController: UIViewController {
-
+class SymptomEntryViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate, DatePicker {
+    
+    
+    //MARK: Properties:
+    var date = ""
+    var ref: FIRDatabaseReference!
+    var user: FIRUser!
+    
+    
+    //MARK: Outlets:
+    @IBOutlet weak var symptomName: UITextField!
+    @IBOutlet weak var symptomDate: UIButton!
+    @IBOutlet weak var symptomDetails: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = "Symptom Entry"
+        symptomDetails.layer.cornerRadius = 10
+        symptomName.delegate = self
+        user = FIRAuth.auth()?.currentUser
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    @IBAction func recordEntry(_ sender: Any) {
+        let name = symptomName.text!
+        let details = symptomDetails.text!
+        let date = self.date
+       
+        let ref = FIRDatabase.database().reference()
+        let newSymRef = ref.child("users/\(self.user.uid)/symptoms").childByAutoId()
+      let symptom = ["symptomName": name, "symptomDetails": details, "symptomDate": date]
+        
+        newSymRef.setValue(symptom)
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func setSelectedDate(selectedDate: String) {
+        date = selectedDate
+        symptomDate.setTitle(date, for: .normal)
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "datePickerSym" {
+            let datePickerViewController: DatePickerViewController = segue.destination as! DatePickerViewController
+            datePickerViewController.delegate = self
+        }
+    }
 
 }
