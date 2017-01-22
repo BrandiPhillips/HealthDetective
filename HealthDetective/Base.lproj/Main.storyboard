@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cp-3d-Clz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="295" y="134"/>
+            <point key="canvasLocation" x="175" y="134"/>
         </scene>
         <!--Symptom Entry View Controller-->
         <scene sceneID="HrG-OW-lQQ">
@@ -181,7 +181,7 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
                                 <state key="normal" title="Select Date" backgroundImage="blankLavendarButton"/>
                                 <connections>
-                                    <segue destination="dbJ-iq-2xu" kind="presentation" id="XHj-TR-Tmu"/>
+                                    <segue destination="dbJ-iq-2xu" kind="presentation" identifier="datePickerSym" id="XHj-TR-Tmu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="go8-9d-TMN">
@@ -198,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a87-P2-YF6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.4000000000001" y="-604.04797601199402"/>
+            <point key="canvasLocation" x="1102" y="139"/>
         </scene>
         <!--Meal Entry View Controller-->
         <scene sceneID="XCr-Iu-gJD">
@@ -267,7 +267,7 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
                                 <state key="normal" title="Select Date" backgroundImage="blankLavendarButton"/>
                                 <connections>
-                                    <segue destination="dbJ-iq-2xu" kind="presentation" id="zOs-bE-fAz"/>
+                                    <segue destination="dbJ-iq-2xu" kind="presentation" identifier="datePicker" id="zOs-bE-fAz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -289,7 +289,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1045.5999999999999" y="116.49175412293854"/>
+            <point key="canvasLocation" x="1580" y="-605"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="DmQ-j4-YJY">
@@ -350,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSA-kJ-9L3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="640.79999999999995" y="893.70314842578716"/>
+            <point key="canvasLocation" x="2911" y="30"/>
         </scene>
         <!--Ingredients View Controller-->
         <scene sceneID="iQw-AL-bhu">
@@ -397,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9QD-NR-ZfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375.2" y="894.60269865067471"/>
+            <point key="canvasLocation" x="2460" y="-800"/>
         </scene>
         <!--Entry List Controller-->
         <scene sceneID="gaz-tr-zp2">
@@ -434,7 +434,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8mt-UM-yx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1802.4000000000001" y="134.48275862068968"/>
+            <point key="canvasLocation" x="1580" y="941"/>
         </scene>
         <!--Entry Details View Controller-->
         <scene sceneID="aVN-5a-H4P">
@@ -452,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHb-3e-yZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2634" y="134"/>
+            <point key="canvasLocation" x="2460" y="941"/>
         </scene>
         <!--Main Nav Controller-->
         <scene sceneID="6Gy-9T-xIj">
@@ -484,8 +484,8 @@
         <image name="uploadPhoto" width="185" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ozh-iP-Ayc"/>
+        <segue reference="XHj-TR-Tmu"/>
+        <segue reference="6Me-jJ-BnL"/>
         <segue reference="mVI-jS-FRd"/>
-        <segue reference="zOs-bE-fAz"/>
     </inferredMetricsTieBreakers>
 </document>

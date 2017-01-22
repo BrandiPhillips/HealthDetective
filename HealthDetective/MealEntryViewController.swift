@@ -9,11 +9,12 @@
 import UIKit
 import Firebase
 
-class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
+class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, DatePicker {
     
     // MARK: Properties:
     
-    var stringPassed = ""
+    
+    var date = ""
     var ref: FIRDatabaseReference!
     
     var user: FIRUser!
@@ -32,15 +33,10 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         mealDetails.layer.cornerRadius = 10
         mealImage.layer.cornerRadius = 10 
         mealNameField.delegate = self
-        mealDate.setTitle(stringPassed, for: .normal)
         user = FIRAuth.auth()?.currentUser
     
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
     
     // MARK:  UITextViewDelegate methods:
     
@@ -98,7 +94,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         let name = mealNameField.text!
         let details = mealDetails.text!
         let imageName = NSUUID().uuidString
-        let date = stringPassed
+        let date = self.date
         let storageRef = FIRStorage.storage().reference().child("\(imageName).png")
         if let uploadImage = UIImagePNGRepresentation(mealImage.image!) {
             storageRef.put(uploadImage, metadata: nil, completion: {(metadata, error) in
@@ -107,7 +103,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
                     return
                 }
                 if let imageUrl = metadata?.downloadURL()?.absoluteString {
-                    let meal = ["mealName": name, "mealDetails": details, "mealImage": imageUrl, "mealDate": date] 
+                    let meal = ["mealName": name, "mealDetails": details, "mealImage": imageUrl, "mealDate": date]
                     
                     self.submitMealToDatabase(meal: meal)
                 }
@@ -122,6 +118,20 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         
         newMealRef.setValue(meal)
     }
+    
+    func setSelectedDate(selectedDate: String) {
+        date = selectedDate
+        mealDate.setTitle(date, for: .normal)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "datePicker" {
+            let datePickerViewController: DatePickerViewController = segue.destination as! DatePickerViewController
+            datePickerViewController.delegate = self
+        }
+    }
+    
+ 
 
 }
 
