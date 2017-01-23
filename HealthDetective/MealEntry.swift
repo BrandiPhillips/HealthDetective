@@ -16,6 +16,7 @@ class Meal {
     var ref: FIRDatabaseReference?
     var mealName: String
     var mealDate: String
+    var mealFoods: Array<String>
     var mealDetails: String?
     var mealImage: String?
     
@@ -33,11 +34,12 @@ class Meal {
         
         
         
-        let data = snapshot.value as! Dictionary<String, String>
-        mealName = data["mealName"]! as String
-        mealDate = data["mealDate"]! as String
-        mealDetails = data["mealDetails"]! as String
-        mealImage = data["mealImage"]! as String
+        let data = snapshot.value as! Dictionary<String, Any>
+        mealName = data["mealName"]! as! String
+        mealDate = data["mealDate"]! as! String
+        mealFoods = data["mealFoods"]! as! Array<String>
+        mealDetails = data["mealDetails"]! as? String
+        mealImage = data["mealImage"]! as? String 
     }
     
 }

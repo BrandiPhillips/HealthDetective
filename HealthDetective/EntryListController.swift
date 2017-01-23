@@ -20,6 +20,9 @@ class EntryListController: UITableViewController {
     private var databaseHandle: FIRDatabaseHandle!
     
     // array of meals used to populate the table
+    
+    // how to I add the symptoms...
+    var symptoms = [Symptom]()
     var meals = [Meal]()
     
 
@@ -62,9 +65,14 @@ class EntryListController: UITableViewController {
     func startObservingDatabase () {
         databaseHandle = ref.child("users/\(self.user.uid)/meals").observe(.value, with: { (snapshot) in
             var newMeals = [Meal]()
+            var newSymptoms = [Symptom]()
             for mealSnapShot in snapshot.children {
                 let meal = Meal(snapshot: mealSnapShot as! FIRDataSnapshot)
                 newMeals.append(meal)
+            }
+            for symptomSnapShot in snapshot.children {
+                let symptom = Symptom(snapshot: symptomSnapShot as! FIRDataSnapshot)
+                newSymptoms.append(symptom)
             }
             self.meals = newMeals
             self.tableView.reloadData()

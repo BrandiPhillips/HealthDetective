@@ -9,12 +9,13 @@
 import UIKit
 import Firebase
 
-class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, DatePicker {
+class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, DatePicker, FoodPicker {
     
     // MARK: Properties:
     
     
     var date = ""
+    var foods = [String]()
     var ref: FIRDatabaseReference!
     
     var user: FIRUser!
@@ -95,6 +96,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         let details = mealDetails.text!
         let imageName = NSUUID().uuidString
         let date = self.date
+        let foods = self.foods
         let storageRef = FIRStorage.storage().reference().child("\(imageName).png")
         if let uploadImage = UIImagePNGRepresentation(mealImage.image!) {
             storageRef.put(uploadImage, metadata: nil, completion: {(metadata, error) in
@@ -103,7 +105,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
                     return
                 }
                 if let imageUrl = metadata?.downloadURL()?.absoluteString {
-                    let meal = ["mealName": name, "mealDetails": details, "mealImage": imageUrl, "mealDate": date]
+                    let meal = ["mealName": name, "mealFoods": foods, "mealDetails": details, "mealImage": imageUrl, "mealDate": date] as [String : Any]
                     
                     self.submitMealToDatabase(meal: meal)
                 }
@@ -128,10 +130,17 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         if segue.identifier == "datePicker" {
             let datePickerViewController: DatePickerViewController = segue.destination as! DatePickerViewController
             datePickerViewController.delegate = self
+        } else if segue.identifier == "foodPicker" {
+            let ingredientsViewController: IngredientsViewController = segue.destination as! IngredientsViewController
+            ingredientsViewController.delegate = self
         }
     }
     
- 
+    func setSelectedFoods(selectedFoods: Array<String>) {
+        foods = selectedFoods
+        
+    }
+    
 
 }
 

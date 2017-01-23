@@ -44,13 +44,6 @@ class DatePickerViewController: UIViewController {
         
     } 
     
-
-//    override func prepare(for Segue: UIStoryboardSegue, sender: Any?) {
-//        if Segue.identifier == "dateSelect" {
-//            let destination = Segue.destination as! MealEntryViewController
-//                destination.stringPassed = (sender as? String)!
-//        }
-//    }
     
 
 }
