@@ -9,26 +9,37 @@
 import UIKit
 import FirebaseDatabase
 
-class MealEntry {
+class Meal {
     
     //MARK: Properties
     
     var ref: FIRDatabaseReference?
     var mealName: String
-//    var mealDateTime: Date
-//    var mealPhoto: UIImage?
+    var mealDate: String
+    var mealFoods: Array<String>
+    var mealDetails: String?
+    var mealImage: String?
     
     //MARK: Initialization
+    
+//    init?(name: String, photo: UIImage?, rating: Int) {
+//        self.mealName = name
+//        self.mealImage = photo?
+//        self.mealDetails = details?
+//        self.mealDate = date
+//    }
     
     init(snapshot: FIRDataSnapshot) {
         ref = snapshot.ref
         
         
         
-        let data = snapshot.value as! Dictionary<String, String>
-        mealName = data["mealName"]! as String
-//        mealDateTime = data["mealDateTime"]! as Date
-//        mealPhoto = data["mealImage"] as photo
+        let data = snapshot.value as! Dictionary<String, Any>
+        mealName = data["mealName"]! as! String
+        mealDate = data["mealDate"]! as! String
+        mealFoods = data["mealFoods"]! as! Array<String>
+        mealDetails = data["mealDetails"]! as? String
+        mealImage = data["mealImage"]! as? String 
     }
     
 }

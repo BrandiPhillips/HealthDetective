@@ -9,44 +9,35 @@
 import UIKit
 import Firebase
 
-class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
+class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, DatePicker, FoodPicker {
     
     // MARK: Properties:
     
+    
+    var date = ""
+    var foods = [String]()
     var ref: FIRDatabaseReference!
+    
     var user: FIRUser!
     
-    
-    
-    var datePicker : UIDatePicker!
     
     //MARK: Outlets
     
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var mealNameField: UITextField!
-    
     @IBOutlet weak var mealDetails: UITextView!
-    
+    @IBOutlet weak var mealDate: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Meal Entry"
-        mealDetails.layer.cornerRadius = 5
-        
+        mealDetails.layer.cornerRadius = 10
+        mealImage.layer.cornerRadius = 10 
         mealNameField.delegate = self
-        
         user = FIRAuth.auth()?.currentUser
     
-
-//        let toolBar = UIToolbar().ToolbarPicker(mySelect: #selector(MealEntryViewController.dismissPicker))
-        
-//        mealDateTimeField.inputAccessoryView = toolBar
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
     
     // MARK:  UITextViewDelegate methods:
     
@@ -63,31 +54,6 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         self.mealNameField.resignFirstResponder()
         return true
     }
-    
-    // update date time field using date picker:
-    func datePickerChanged(sender: UIDatePicker) {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .medium
-//        dateFormatter.timeStyle = .short
-//        mealDateTimeField.text = dateFormatter.string(from: sender.date)
-//        
-//        print("new date?") // this isn't working... 
-    }
-    
-    // is this over ridding the keyboard for the mealName Field??  At one time it was getting a keyboard and the date field a date picker but for some reason that is not happening any longer...
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        let datePicker = UIDatePicker()
-//        textField.inputView = datePicker
-//        datePicker.addTarget(self, action: (Selector(("datePickerChanged:"))), for: .valueChanged)
-//        print("did it work")
-    }
-    
-    func dismissPicker() {
-        
-        view.endEditing(true)
-        
-    }
-    
     
     // MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -125,37 +91,57 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     
  
 
-    @IBAction func recordEntry(_ sender: UIButton) {
+    @IBAction func recordEntry(_ sender: Any) {
         let name = mealNameField.text!
-        let details = mealDetails.text! 
+        let details = mealDetails.text!
+        let imageName = NSUUID().uuidString
+        let date = self.date
+        let foods = self.foods
+        let storageRef = FIRStorage.storage().reference().child("\(imageName).png")
+        if let uploadImage = UIImagePNGRepresentation(mealImage.image!) {
+            storageRef.put(uploadImage, metadata: nil, completion: {(metadata, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                if let imageUrl = metadata?.downloadURL()?.absoluteString {
+                    let meal = ["mealName": name, "mealFoods": foods, "mealDetails": details, "mealImage": imageUrl, "mealDate": date] as [String : Any]
+                    
+                    self.submitMealToDatabase(meal: meal)
+                }
+            })
+        }
+    }
+    
+    
+    private func submitMealToDatabase(meal: [String: Any]){
+        let ref = FIRDatabase.database().reference()
+        let newMealRef = ref.child("users/\(self.user.uid)/meals").childByAutoId()
         
-        ref = FIRDatabase.database().reference()
-        
-        ref.child("users").child("\(self.user.uid)").child("meals").setValue(["mealName": name])
+        newMealRef.setValue(meal)
+    }
+    
+    func setSelectedDate(selectedDate: String) {
+        date = selectedDate
+        mealDate.setTitle(date, for: .normal)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "datePicker" {
+            let datePickerViewController: DatePickerViewController = segue.destination as! DatePickerViewController
+            datePickerViewController.delegate = self
+        } else if segue.identifier == "foodPicker" {
+            let ingredientsViewController: IngredientsViewController = segue.destination as! IngredientsViewController
+            ingredientsViewController.delegate = self
+        }
+    }
+    
+    func setSelectedFoods(selectedFoods: Array<String>) {
+        foods = selectedFoods
         
     }
+    
 
 }
 
-// Make a done button for date picker
-extension UIToolbar {
-    
-    func ToolbarPicker(mySelect : Selector) -> UIToolbar {
-        
-        let toolBar = UIToolbar()
-        
-        toolBar.barStyle = UIBarStyle.default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor.black
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: mySelect)
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        
-        toolBar.setItems([ spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
-        return toolBar
-    }
-    
-}
+

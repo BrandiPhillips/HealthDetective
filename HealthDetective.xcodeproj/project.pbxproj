@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		45421FFF6EDFE56219DAAC03 /* Pods_HealthDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D87F10D6EC495FD2489FE02 /* Pods_HealthDetective.framework */; };
+		9533786D1E34719F0057B405 /* SymptomEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533786C1E34719F0057B405 /* SymptomEntry.swift */; };
 		9547AA891E2AC9C70049DC43 /* MealEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9547AA881E2AC9C70049DC43 /* MealEntryViewController.swift */; };
 		9547AA8B1E2C39990049DC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9547AA8A1E2C39990049DC43 /* Assets.xcassets */; };
 		9547AA911E2D58250049DC43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9547AA901E2D58250049DC43 /* GoogleService-Info.plist */; };
@@ -16,6 +17,10 @@
 		956FB6701E21A73800E9149E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956FB66E1E21A73800E9149E /* Main.storyboard */; };
 		956FB6751E21A73800E9149E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956FB6731E21A73800E9149E /* LaunchScreen.storyboard */; };
 		956FB6801E21A73900E9149E /* HealthDetectiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FB67F1E21A73900E9149E /* HealthDetectiveTests.swift */; };
+		95A220391E31B0C800291D1E /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A220381E31B0C800291D1E /* DatePickerViewController.swift */; };
+		95A2203B1E31BB5B00291D1E /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A2203A1E31BB5B00291D1E /* IngredientsViewController.swift */; };
+		95A2203D1E31C32D00291D1E /* SymptomEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A2203C1E31C32D00291D1E /* SymptomEntryViewController.swift */; };
+		95A2203F1E31C34700291D1E /* EntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A2203E1E31C34700291D1E /* EntryDetailsViewController.swift */; };
 		95F33C861E293E8000B8B162 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C851E293E8000B8B162 /* DashboardController.swift */; };
 		95F33C881E293ED200B8B162 /* EntryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C871E293ED200B8B162 /* EntryListController.swift */; };
 		95F33C8A1E293F6700B8B162 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C891E293F6700B8B162 /* LoginViewController.swift */; };
@@ -36,6 +41,7 @@
 		3B3B2502EB1DB7730860BCA7 /* Pods-HealthDetective.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthDetective.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthDetective/Pods-HealthDetective.debug.xcconfig"; sourceTree = "<group>"; };
 		80DC34075E2D1F89E420BC4B /* Pods-HealthDetective.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthDetective.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthDetective/Pods-HealthDetective.release.xcconfig"; sourceTree = "<group>"; };
 		8D87F10D6EC495FD2489FE02 /* Pods_HealthDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9533786C1E34719F0057B405 /* SymptomEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomEntry.swift; sourceTree = "<group>"; };
 		9547AA881E2AC9C70049DC43 /* MealEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEntryViewController.swift; sourceTree = "<group>"; };
 		9547AA8A1E2C39990049DC43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		9547AA901E2D58250049DC43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -48,6 +54,10 @@
 		956FB67B1E21A73900E9149E /* HealthDetectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthDetectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		956FB67F1E21A73900E9149E /* HealthDetectiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDetectiveTests.swift; sourceTree = "<group>"; };
 		956FB6811E21A73900E9149E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95A220381E31B0C800291D1E /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		95A2203A1E31BB5B00291D1E /* IngredientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
+		95A2203C1E31C32D00291D1E /* SymptomEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomEntryViewController.swift; sourceTree = "<group>"; };
+		95A2203E1E31C34700291D1E /* EntryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryDetailsViewController.swift; sourceTree = "<group>"; };
 		95F33C851E293E8000B8B162 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		95F33C871E293ED200B8B162 /* EntryListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryListController.swift; sourceTree = "<group>"; };
 		95F33C891E293F6700B8B162 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -110,8 +120,13 @@
 				95F33C8B1E2940B900B8B162 /* MainNavController.swift */,
 				95F33C851E293E8000B8B162 /* DashboardController.swift */,
 				9547AA881E2AC9C70049DC43 /* MealEntryViewController.swift */,
+				95A220381E31B0C800291D1E /* DatePickerViewController.swift */,
+				95A2203A1E31BB5B00291D1E /* IngredientsViewController.swift */,
+				95A2203C1E31C32D00291D1E /* SymptomEntryViewController.swift */,
 				95F33C871E293ED200B8B162 /* EntryListController.swift */,
+				95A2203E1E31C34700291D1E /* EntryDetailsViewController.swift */,
 				9547AA921E2D73090049DC43 /* MealEntry.swift */,
+				9533786C1E34719F0057B405 /* SymptomEntry.swift */,
 				956FB66E1E21A73800E9149E /* Main.storyboard */,
 				9547AA8A1E2C39990049DC43 /* Assets.xcassets */,
 				956FB6731E21A73800E9149E /* LaunchScreen.storyboard */,
@@ -294,12 +309,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9533786D1E34719F0057B405 /* SymptomEntry.swift in Sources */,
 				9547AA891E2AC9C70049DC43 /* MealEntryViewController.swift in Sources */,
 				95F33C8A1E293F6700B8B162 /* LoginViewController.swift in Sources */,
 				9547AA931E2D73090049DC43 /* MealEntry.swift in Sources */,
 				95F33C881E293ED200B8B162 /* EntryListController.swift in Sources */,
+				95A220391E31B0C800291D1E /* DatePickerViewController.swift in Sources */,
 				95F33C861E293E8000B8B162 /* DashboardController.swift in Sources */,
+				95A2203B1E31BB5B00291D1E /* IngredientsViewController.swift in Sources */,
+				95A2203F1E31C34700291D1E /* EntryDetailsViewController.swift in Sources */,
 				95F33C8C1E2940B900B8B162 /* MainNavController.swift in Sources */,
+				95A2203D1E31C32D00291D1E /* SymptomEntryViewController.swift in Sources */,
 				956FB66B1E21A73800E9149E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
