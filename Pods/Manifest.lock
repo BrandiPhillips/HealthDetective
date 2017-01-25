@@ -46,12 +46,14 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
   - GTMSessionFetcher/Core (1.1.7)
+  - TimelineTableViewCell (1.0.0)
 
 DEPENDENCIES:
   - Firebase
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
+  - TimelineTableViewCell
 
 SPEC CHECKSUMS:
   Firebase: b8134e285eb33201115bc688bc5d7f112923bc1f
@@ -65,7 +67,8 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  TimelineTableViewCell: 019e1ece631d319f5634542f54bce05e72f4b126
 
-PODFILE CHECKSUM: 89f769c1914fb7f4d9257c1c75ceed6d59875db3
+PODFILE CHECKSUM: ce1bd024f28b25258ed956bf2eafa22633dc8ca0
 
 COCOAPODS: 1.1.1

@@ -462,44 +462,14 @@
             </objects>
             <point key="canvasLocation" x="1580" y="941"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Time Line Table View Controller-->
         <scene sceneID="kh5-wK-pSA">
             <objects>
-                <tableViewController id="iYo-DR-V9H" sceneMemberID="viewController">
+                <tableViewController id="iYo-DR-V9H" customClass="TimeLineTableViewController" customModule="HealthDetective" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="loE-7P-GUR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryTableViewCell" rowHeight="90" id="kAy-Fm-pLY" customClass="EntryTableViewCell" customModule="HealthDetective" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kAy-Fm-pLY" id="cQb-GU-feE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX5-5x-JqI">
-                                            <rect key="frame" x="21" y="34" width="60" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="VLO-wX-7uW">
-                                            <rect key="frame" x="102" y="8" width="241" height="73"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="entryDetails" destination="VLO-wX-7uW" id="FP1-ds-Djr"/>
-                                    <outlet property="entryTitle" destination="KX5-5x-JqI" id="Nyi-OP-IhA"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="iYo-DR-V9H" id="BgS-ug-l3F"/>
                             <outlet property="delegate" destination="iYo-DR-V9H" id="Aro-7T-Hos"/>
@@ -530,7 +500,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="165" height="172"/>
+        <image name="Image" width="245" height="255"/>
         <image name="blankLavendarButton" width="314" height="57"/>
         <image name="entryListButton" width="326" height="57"/>
         <image name="ingredients-1" width="326" height="57"/>
