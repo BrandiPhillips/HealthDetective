@@ -98,6 +98,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         let date = self.date
         let foods = self.foods
         let storageRef = FIRStorage.storage().reference().child("\(imageName).png")
+        
         if let uploadImage = UIImagePNGRepresentation(mealImage.image!) {
             storageRef.put(uploadImage, metadata: nil, completion: {(metadata, error) in
                 if error != nil {
@@ -121,11 +122,6 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         newMealRef.setValue(meal)
     }
     
-    func setSelectedDate(selectedDate: String) {
-        date = selectedDate
-        mealDate.setTitle(date, for: .normal)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "datePicker" {
             let datePickerViewController: DatePickerViewController = segue.destination as! DatePickerViewController
@@ -134,6 +130,11 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
             let ingredientsViewController: IngredientsViewController = segue.destination as! IngredientsViewController
             ingredientsViewController.delegate = self
         }
+    }
+    
+    func setSelectedDate(selectedDate: String) {
+        date = selectedDate
+        mealDate.setTitle(date, for: .normal)
     }
     
     func setSelectedFoods(selectedFoods: Array<String>) {

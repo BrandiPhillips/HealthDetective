@@ -22,9 +22,9 @@ class Symptom {
         ref = snapshot.ref
         
         let data = snapshot.value as! Dictionary<String, String>
-        symptomName = data["mealName"]! as String
-        symptomDate = data["mealDate"]! as String
-        symptomDetails = data["mealDetails"]! as String
+        symptomName = data["symptomName"]! as String
+        symptomDate = data["symptomDate"]! as String
+        symptomDetails = data["symptomDetails"]! as String
     }
     
 }

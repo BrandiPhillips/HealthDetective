@@ -196,7 +196,7 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
  
     
     //MARK: Format Date and time and set selectedFoods for MealEntryViewController
-    func passDataBackwards() -> Array<String>? {
+    func passDataBackwards() -> Array<String> {
         
         return selectedFoods
         
@@ -205,7 +205,7 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
  
     @IBAction func dismissPopover(_ sender: Any) {
         if delegate != nil {
-            delegate?.setSelectedFoods(selectedFoods: passDataBackwards()!)
+            delegate?.setSelectedFoods(selectedFoods: passDataBackwards())
         }
          dismiss(animated: true, completion: nil)
     }
