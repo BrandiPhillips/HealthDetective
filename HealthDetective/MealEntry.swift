@@ -18,7 +18,7 @@ class Meal {
     var mealDate: String
     var mealFoods: Array<String>
     var mealDetails: String?
-    var mealImage: String?
+    //var mealImage: String?
     
     //MARK: Initialization
     
@@ -39,7 +39,6 @@ class Meal {
         mealDate = data["mealDate"]! as! String
         mealFoods = data["mealFoods"]! as! Array<String>
         mealDetails = data["mealDetails"]! as? String
-        mealImage = data["mealImage"]! as? String 
     }
     
 }

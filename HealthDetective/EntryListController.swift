@@ -37,7 +37,7 @@ class EntryListController: UITableViewController {
         ref = FIRDatabase.database().reference()
         // listen for any changes to the database:
         startObservingDatabase()
-         self.tableView.reloadData()
+        
     }
     
     // MARK: Table view data source
@@ -106,7 +106,7 @@ class EntryListController: UITableViewController {
             }
             
         })
-        
+        self.tableView.reloadData() 
     }
     
     deinit {
