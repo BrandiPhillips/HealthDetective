@@ -14,9 +14,6 @@ class SymptomEntryViewController: UIViewController, UINavigationControllerDelega
     
     //MARK: Properties:
     var date = ""
-    var ref: FIRDatabaseReference!
-    var user: FIRUser!
-    
     
     //MARK: Outlets:
     @IBOutlet weak var symptomName: UITextField!
@@ -33,19 +30,11 @@ class SymptomEntryViewController: UIViewController, UINavigationControllerDelega
     }
 
     
-    
+    // TODO: set this up to capture the data then send it to the sypmtom model controller:
     @IBAction func recordEntry(_ sender: Any) {
         let name = symptomName.text!
         let details = symptomDetails.text!
         let date = self.date
-       
-        let ref = FIRDatabase.database().reference()
-        let newSymRef = ref.child("users/\(self.user.uid)/symptoms").childByAutoId()
-      let symptom = ["symptomName": name, "symptomDetails": details, "symptomDate": date]
-        
-        newSymRef.setValue(symptom)
-        
-        
     }
     
     
@@ -54,6 +43,7 @@ class SymptomEntryViewController: UIViewController, UINavigationControllerDelega
         symptomDate.setTitle(date, for: .normal)
     }
     
+    // this is getting the date from the date modal and sending it to the symptom screen:
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "datePickerSym" {
             let datePickerViewController: DatePickerViewController = segue.destination as! DatePickerViewController

@@ -20,6 +20,7 @@
 		95A220391E31B0C800291D1E /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A220381E31B0C800291D1E /* DatePickerViewController.swift */; };
 		95A2203B1E31BB5B00291D1E /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A2203A1E31BB5B00291D1E /* IngredientsViewController.swift */; };
 		95A2203D1E31C32D00291D1E /* SymptomEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A2203C1E31C32D00291D1E /* SymptomEntryViewController.swift */; };
+		95C574081F0AD311005A19FA /* SymptomModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C574071F0AD311005A19FA /* SymptomModelController.swift */; };
 		95F33C861E293E8000B8B162 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C851E293E8000B8B162 /* DashboardController.swift */; };
 		95F33C881E293ED200B8B162 /* EntryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C871E293ED200B8B162 /* EntryListController.swift */; };
 		95F33C8A1E293F6700B8B162 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C891E293F6700B8B162 /* LoginViewController.swift */; };
@@ -56,6 +57,7 @@
 		95A220381E31B0C800291D1E /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		95A2203A1E31BB5B00291D1E /* IngredientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
 		95A2203C1E31C32D00291D1E /* SymptomEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomEntryViewController.swift; sourceTree = "<group>"; };
+		95C574071F0AD311005A19FA /* SymptomModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomModelController.swift; sourceTree = "<group>"; };
 		95F33C851E293E8000B8B162 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		95F33C871E293ED200B8B162 /* EntryListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryListController.swift; sourceTree = "<group>"; };
 		95F33C891E293F6700B8B162 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		956FB6691E21A73800E9149E /* HealthDetective */ = {
 			isa = PBXGroup;
 			children = (
+				95C574061F0AD2B6005A19FA /* Symptoms */,
 				956FB66A1E21A73800E9149E /* AppDelegate.swift */,
 				95F33C891E293F6700B8B162 /* LoginViewController.swift */,
 				95F33C8B1E2940B900B8B162 /* MainNavController.swift */,
@@ -139,6 +142,14 @@
 				956FB6811E21A73900E9149E /* Info.plist */,
 			);
 			path = HealthDetectiveTests;
+			sourceTree = "<group>";
+		};
+		95C574061F0AD2B6005A19FA /* Symptoms */ = {
+			isa = PBXGroup;
+			children = (
+				95C574071F0AD311005A19FA /* SymptomModelController.swift */,
+			);
+			name = Symptoms;
 			sourceTree = "<group>";
 		};
 		C5E6F05EB55241829AC87097 /* Pods */ = {
@@ -307,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9533786D1E34719F0057B405 /* SymptomEntry.swift in Sources */,
+				95C574081F0AD311005A19FA /* SymptomModelController.swift in Sources */,
 				9547AA891E2AC9C70049DC43 /* MealEntryViewController.swift in Sources */,
 				95F33C8A1E293F6700B8B162 /* LoginViewController.swift in Sources */,
 				9547AA931E2D73090049DC43 /* MealEntry.swift in Sources */,

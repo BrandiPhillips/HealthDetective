@@ -9,14 +9,14 @@
 import Foundation
 import FirebaseDatabase
 
-class Symptom {
+struct Symptom {
     
     //MARK: Properties
     
-    var ref: FIRDatabaseReference?
-    var symptomName: String
-    var symptomDate: String
-    var symptomDetails: String?
+    let ref: FIRDatabaseReference?
+    let symptomName: String
+    let symptomDate: String
+    let symptomDetails: String?
     
     init(snapshot: FIRDataSnapshot) {
         ref = snapshot.ref
