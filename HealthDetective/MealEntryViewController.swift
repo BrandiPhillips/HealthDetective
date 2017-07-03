@@ -16,8 +16,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
     
     var date = ""
     var foods = [String]()
-    var ref: FIRDatabaseReference!
-    
+    // This should be in the model as well I think, then the model controller should send it here
     var user: FIRUser!
     
     
@@ -33,7 +32,7 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         self.title = "Meal Entry"
         mealDetails.layer.cornerRadius = 10
         mealImage.layer.cornerRadius = 10 
-        mealNameField.delegate = self
+        mealNameField.delegate = self 
         user = FIRAuth.auth()?.currentUser
     
     }
@@ -89,22 +88,19 @@ class MealEntryViewController: UIViewController, UIImagePickerControllerDelegate
         present(imagePickerController, animated: true, completion: nil)
     }
     
+    // TODO: make this package up the data and send it to the meal model controller:
     @IBAction func recordEntry(_ sender: Any) {
-        let ref = FIRDatabase.database().reference()
-        let newMealRef = ref.child("users/\(self.user.uid)/meals").childByAutoId()
         let name = mealNameField.text!
-        print(mealNameField)
         let details = mealDetails.text!
         let date = self.date
-        print(date)
         let foods = self.foods
-        print(foods)
     
         let meal = ["mealName": name, "mealFoods": foods, "mealDetails": details, "mealDate": date] as [String : Any]
         
         newMealRef.setValue(meal)
     }
     
+    // getting information from the modals and displaying them on the meal entry screen:
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "datePicker" {
             let datePickerViewController: DatePickerViewController = segue.destination as! DatePickerViewController

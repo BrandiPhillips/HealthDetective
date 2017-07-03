@@ -21,6 +21,7 @@
 		95A2203B1E31BB5B00291D1E /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A2203A1E31BB5B00291D1E /* IngredientsViewController.swift */; };
 		95A2203D1E31C32D00291D1E /* SymptomEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A2203C1E31C32D00291D1E /* SymptomEntryViewController.swift */; };
 		95C574081F0AD311005A19FA /* SymptomModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C574071F0AD311005A19FA /* SymptomModelController.swift */; };
+		95C5740B1F0AE13D005A19FA /* MealModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5740A1F0AE13D005A19FA /* MealModelController.swift */; };
 		95F33C861E293E8000B8B162 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C851E293E8000B8B162 /* DashboardController.swift */; };
 		95F33C881E293ED200B8B162 /* EntryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C871E293ED200B8B162 /* EntryListController.swift */; };
 		95F33C8A1E293F6700B8B162 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F33C891E293F6700B8B162 /* LoginViewController.swift */; };
@@ -58,6 +59,7 @@
 		95A2203A1E31BB5B00291D1E /* IngredientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
 		95A2203C1E31C32D00291D1E /* SymptomEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomEntryViewController.swift; sourceTree = "<group>"; };
 		95C574071F0AD311005A19FA /* SymptomModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomModelController.swift; sourceTree = "<group>"; };
+		95C5740A1F0AE13D005A19FA /* MealModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealModelController.swift; sourceTree = "<group>"; };
 		95F33C851E293E8000B8B162 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		95F33C871E293ED200B8B162 /* EntryListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryListController.swift; sourceTree = "<group>"; };
 		95F33C891E293F6700B8B162 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -115,18 +117,15 @@
 		956FB6691E21A73800E9149E /* HealthDetective */ = {
 			isa = PBXGroup;
 			children = (
+				95C574091F0AE120005A19FA /* Meals */,
 				95C574061F0AD2B6005A19FA /* Symptoms */,
 				956FB66A1E21A73800E9149E /* AppDelegate.swift */,
 				95F33C891E293F6700B8B162 /* LoginViewController.swift */,
 				95F33C8B1E2940B900B8B162 /* MainNavController.swift */,
 				95F33C851E293E8000B8B162 /* DashboardController.swift */,
-				9547AA881E2AC9C70049DC43 /* MealEntryViewController.swift */,
 				95A220381E31B0C800291D1E /* DatePickerViewController.swift */,
 				95A2203A1E31BB5B00291D1E /* IngredientsViewController.swift */,
-				95A2203C1E31C32D00291D1E /* SymptomEntryViewController.swift */,
 				95F33C871E293ED200B8B162 /* EntryListController.swift */,
-				9547AA921E2D73090049DC43 /* MealEntry.swift */,
-				9533786C1E34719F0057B405 /* SymptomEntry.swift */,
 				956FB66E1E21A73800E9149E /* Main.storyboard */,
 				9547AA8A1E2C39990049DC43 /* Assets.xcassets */,
 				956FB6731E21A73800E9149E /* LaunchScreen.storyboard */,
@@ -147,9 +146,21 @@
 		95C574061F0AD2B6005A19FA /* Symptoms */ = {
 			isa = PBXGroup;
 			children = (
+				9533786C1E34719F0057B405 /* SymptomEntry.swift */,
 				95C574071F0AD311005A19FA /* SymptomModelController.swift */,
+				95A2203C1E31C32D00291D1E /* SymptomEntryViewController.swift */,
 			);
 			name = Symptoms;
+			sourceTree = "<group>";
+		};
+		95C574091F0AE120005A19FA /* Meals */ = {
+			isa = PBXGroup;
+			children = (
+				9547AA921E2D73090049DC43 /* MealEntry.swift */,
+				95C5740A1F0AE13D005A19FA /* MealModelController.swift */,
+				9547AA881E2AC9C70049DC43 /* MealEntryViewController.swift */,
+			);
+			name = Meals;
 			sourceTree = "<group>";
 		};
 		C5E6F05EB55241829AC87097 /* Pods */ = {
@@ -317,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C5740B1F0AE13D005A19FA /* MealModelController.swift in Sources */,
 				9533786D1E34719F0057B405 /* SymptomEntry.swift in Sources */,
 				95C574081F0AD311005A19FA /* SymptomModelController.swift in Sources */,
 				9547AA891E2AC9C70049DC43 /* MealEntryViewController.swift in Sources */,

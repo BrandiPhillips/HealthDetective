@@ -9,16 +9,16 @@
 import UIKit
 import FirebaseDatabase
 
-class Meal {
+struct Meal {
     
     //MARK: Properties
     
-    var ref: FIRDatabaseReference?
-    var mealName: String
-    var mealDate: String
-    var mealFoods: Array<String>
-    var mealDetails: String?
-    //var mealImage: String?
+    let ref: FIRDatabaseReference?
+    let mealName: String
+    let mealDate: String
+    let mealFoods: Array<String>
+    let mealDetails: String?
+    //let mealImage: String?
     
     //MARK: Initialization
     
